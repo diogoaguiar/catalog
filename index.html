@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Catalog</title>
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="topbar">
+            <div class="logo">Inocentro</div>
+            <div class="current-page">
+                <span v-if="showLeftPage">{{ pageLeft }}</span>
+                <span v-if="showLeftPage && showRightPage">-</span>
+                <span v-if="showRightPage">{{ pageRight }}</span>
+                <span>/</span>
+                <span>{{ config.pages }}</span>
+            </div>
+            <div class="options">
+                <a href="#"><img src="assets/icons/download-white.png"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="catalog">
+                <div v-if="showNavPrev" class="navigation">
+                    <div class="skip">
+                        <a href="#" @click="first()"><img src="assets/icons/chevron-double-left-black.png"></a>
+                    </div>
+                    <div class="step">
+                        <a href="#" @click="prev()"><img src="assets/icons/chevron-left-black.png"></a>
+                    </div>
+                    <div class="page-number">{{ pageLeft }}</div>
+                </div>
+                <div v-if="showLeftPage" class="page left">
+                    <img :src="`pages/${pageLeft}.${config.format}`">
+                </div>
+                <div v-if="showRightPage" class="page right">
+                    <img :src="`pages/${pageRight}.${config.format}`">
+                </div>
+                <div v-if="showNavNext" class="navigation">
+                    <div class="skip">
+                        <a href="#" @click="last()"><img src="assets/icons/chevron-double-right-black.png"></a>
+                    </div>
+                    <div class="step">
+                        <a href="#" @click="next()"><img src="assets/icons/chevron-right-black.png"></a>
+                    </div>
+                    <div class="page-number">{{ pageRight }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="config.js"></script>
+<script src="assets/app.js"></script>
+</html>

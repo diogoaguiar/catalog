@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 920px) {
+    .navigation {
+        display: none !important;
+    }
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.topbar {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000;
+    color: #fff;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.topbar div {
+    width: 33%;
+}
+
+.topbar .logo {
+    text-align: left;
+}
+
+.topbar .current-page {
+    text-align: center;
+}
+
+.topbar .options {
+    text-align: right;
+}
+
+.content {
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.catalog {
+    display: flex;
+    height: 95%;
+    overflow: hidden;
+}
+
+.page {
+    height: 100%;
+}
+
+.page img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.navigation {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.navigation .skip img {
+    height: 32px;
+    width: 32px;
+}
+
+.navigation .page-number {
+    margin-left: 1em;
+    margin-right: 1em;
+}
